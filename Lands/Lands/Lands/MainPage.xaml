@@ -3,9 +3,42 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Lands"
              x:Class="Lands.MainPage">
-
-	<Label Text="Welcome to Xamarin.Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
-
+    <ContentPage.Content>
+    <StackLayout
+        Padding="10,20,10,5">
+        <Label
+            FontAttributes="Bold"
+            FontSize="Large"
+            HorizontalOptions="Center"
+            Text="Login">
+        </Label>
+            <Image
+                Source="onu">
+            </Image>
+        <Label
+            Text="E-Mail">
+        </Label>
+        <Entry
+            Keyboard="Email"
+            Placeholder="Entre com seu Email...">
+        </Entry>
+        <Label
+            Text="Password">
+        </Label>
+        <Entry
+            IsPassword="True"
+            Placeholder="Entre com sua senha...">
+        </Entry>
+        <ActivityIndicator>
+       
+        </ActivityIndicator>
+        <Button 
+            BackgroundColor="Navy"
+            BorderRadius="23"
+            Text="Login"
+            TextColor="White">
+            
+        </Button>
+    </StackLayout>
+    </ContentPage.Content>
 </ContentPage>
