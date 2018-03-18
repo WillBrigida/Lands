@@ -2,7 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Lands"
-             x:Class="Lands.MainPage">
+             x:Class="Lands.MainPage"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             Title="Login">
     <ContentPage.Content>
     <StackLayout
         Padding="10,20,10,5">
@@ -12,9 +14,12 @@
             HorizontalOptions="Center"
             Text="Login">
         </Label>
+
             <Image
                 Source="onu">
+                
             </Image>
+        
         <Label
             Text="E-Mail">
         </Label>
@@ -32,6 +37,7 @@
         <ActivityIndicator>
        
         </ActivityIndicator>
+        
         <Button 
             BackgroundColor="Navy"
             BorderRadius="23"
@@ -39,6 +45,13 @@
             TextColor="White">
             
         </Button>
-    </StackLayout>
+            <Button 
+            BackgroundColor="Purple"
+            BorderRadius="23"
+            Text="Registrar"
+            TextColor="White">
+
+            </Button>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
