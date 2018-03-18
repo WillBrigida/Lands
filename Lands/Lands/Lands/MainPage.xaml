@@ -41,7 +41,7 @@
             
         </Entry>
         <ActivityIndicator
-            IsRunning="{Binding IsRunning}"
+            IsRunning="{Binding IsRunning, Mode=TwoWay}"
             VerticalOptions="CenterAndExpand">
        
         </ActivityIndicator>
@@ -50,6 +50,7 @@
             BackgroundColor="Navy"
             BorderRadius="23"
             Command="{Binding LoginCommand}"
+            IsEnabled="{Binding IsEnabled, Mode=TwoWay}"    
             Text="Login"
             TextColor="White">
             
@@ -57,6 +58,7 @@
             <Button 
             BackgroundColor="Purple"
             BorderRadius="23"
+            IsEnabled="{Binding IsEnabled, Mode=TwoWay}"    
             Text="Registrar"
             TextColor="White">
 

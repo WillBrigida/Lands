@@ -5,11 +5,47 @@ using Xamarin.Forms;
 
 namespace Lands.ViewModels
 {
-    public class LoginViewModel
+    public class LoginViewModel : BaseViewModel
     {
-        public string Email { get; set; }
-        public string Password { get; set; }
-        public bool isRunning { get; set; }
+        private string email;
+
+        public string Email
+        {
+            get { return email; }
+            set { this.SetProperty ( ref email , value); }
+        }
+
+        private string password;
+
+        public string Password
+        {
+            get { return password; }
+            set
+            {
+                if (this.password != value)
+                {
+                    this.SetProperty( ref password , value);
+                }
+            }
+        }
+
+        private bool isEnabled;
+
+        public bool IsEnabled
+        {
+            get { return isEnabled; }
+            set { this.SetProperty ( ref isEnabled , value); }
+        }
+
+
+        private bool isRunning;
+
+        public bool IsRunning
+        {
+            get { return isRunning; }
+            set {this.SetProperty(ref  isRunning , value); }
+        }
+
 
         public ICommand LoginCommand
         {
@@ -22,25 +58,34 @@ namespace Lands.ViewModels
         private async void Login()
         {
 
-            if (string.IsNullOrEmpty(this.Email))
+            if (string.IsNullOrEmpty(this.Email ))
             {
+
+
                 await Application.Current.MainPage.DisplayAlert(
                     "Ops!",
                     "Você esqueceu de digitar seu Email",
                     "Ok");
                 return;
             }
+                
 
-                if (string.IsNullOrEmpty(this.Password))
+
+            if (string.IsNullOrEmpty(this.Password))
                 {
+
                     await Application.Current.MainPage.DisplayAlert(
-                        "Ops!",
-                        "Você esqueceu de digitar sua senha",
-                        "Ok");
-                    return;
+                    "Ops!",
+                    "Você esqueceu de digitar sua senha",
+                    "Ok");
+                
+                return;
                 }
 
-                if (this.Email != "will_brigida@hotmail.com" || this.Password != "123456")
+            
+            
+
+            if (this.Email != "will_brigida@hotmail.com" || this.Password != "123456")
                 {
                     await Application.Current.MainPage.DisplayAlert(
                         "Ops!",
@@ -53,7 +98,7 @@ namespace Lands.ViewModels
 
         public LoginViewModel()
         {
-
+            this.IsEnabled = true;
         }
     }
 }
